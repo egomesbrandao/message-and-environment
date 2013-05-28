@@ -8,7 +8,7 @@ namespace ebl_arduino.examples
     /// <summary>
     /// Client application for LCDWriter sketch.
     /// </summary>
-    class LCDWrite
+    public class LCDWrite
     {
         //types of parameters
         private const int PARAMETER_BACKLIGHT = 0;
@@ -48,10 +48,10 @@ namespace ebl_arduino.examples
                     Console.WriteLine("'");
                 }
 
+                AdvancedSerialClient ArduinoClient = new AdvancedSerialClient();
+
                 try
                 {
-                    //create object
-                    AdvancedSerialClient ArduinoClient = new AdvancedSerialClient();
                     //connect to device
                     ArduinoClient.Open(Arguments[PARAMETER_PORT].ToString(), 115200);
 
@@ -73,7 +73,7 @@ namespace ebl_arduino.examples
                     {
                         SerialProtocol.AdvancedSerialMessage TextMessage = new SerialProtocol.AdvancedSerialMessage();
                         TextMessage.ID = TEXT_MESSAGE;
-                        TextMessage.Payload = new System.Text.ASCIIEncoding().GetBytes(Arguments[PARAMETER_TEXT].ToString());
+                        TextMessage.Payload = new System.Text.UTF8Encoding().GetBytes(Arguments[PARAMETER_TEXT].ToString());
                         TextMessage.Size = (byte)TextMessage.Payload.Length;
                         ArduinoClient.Send(TextMessage);
                     }
@@ -81,6 +81,11 @@ namespace ebl_arduino.examples
                 catch (Exception ex)
                 {
                     Console.Write("Error: " + ex.Message);
+                }
+                finally
+                {
+                    if (ArduinoClient.IsConnected())
+                        ArduinoClient.Close();
                 }
             }
             else

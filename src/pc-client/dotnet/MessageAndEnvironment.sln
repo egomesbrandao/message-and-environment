@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet", "dotnet.csproj", "{12D43696-C6CA-4B65-9339-828D481BEF52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageAndEnvironment.AdvancedSerialClient", "MessageAndEnvironment.AdvancedSerialClient.csproj", "{12D43696-C6CA-4B65-9339-828D481BEF52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LCDWrite", "examples\LCDWrite\LCDWrite.csproj", "{9BF24F86-B43E-4F61-8A3D-D093DEB97DC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageAndEnvironment.Broker", "examples\LCDWrite\MessageAndEnvironment.Broker.csproj", "{9BF24F86-B43E-4F61-8A3D-D093DEB97DC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

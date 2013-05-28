@@ -56,13 +56,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LCDWrite.cs" />
+    <Compile Include="Lisener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\dotnet.csproj">
+    <ProjectReference Include="..\..\MessageAndEnvironment.AdvancedSerialClient.csproj">
       <Project>{12D43696-C6CA-4B65-9339-828D481BEF52}</Project>
-      <Name>dotnet</Name>
+      <Name>MessageAndEnvironment.AdvancedSerialClient</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
